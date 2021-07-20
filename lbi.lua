@@ -1066,15 +1066,18 @@ function wrap_lua_func(state, env, upvals)
 	return exec_wrap
 end
 
-return function (a1)
-    local func;
-    local s, e = pcall(function()
-        func = wrap_lua_func(stm_lua_bytecode(a1), getfenv())
-    end)
+print("bogie was here")
 
-    if s then
-        spawn(func)
-    else
-        warn("compile failure: ", e)
-    end
+return function (a1)
+	print("lbi called")
+	local func;
+	local s, e = pcall(function()
+		func = wrap_lua_func(stm_lua_bytecode(a1), getfenv())
+	end)
+
+	if s then
+		spawn(func)
+	else
+		warn("compile failure: ", e)
+	end
 end
