@@ -1,4 +1,4 @@
-# bogie-lbi-v2
+# Bogie LBI
 
 minimal roblox execution via fione lbi
 
